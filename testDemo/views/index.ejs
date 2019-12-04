@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include partials/scripts.ejs %>
+  </head>
+  <body>
+    <div class='container'>
+        <% include partials/header.ejs %>
+        <a href='/add'>
+          <button class='btn btn-warning'>+ Add</button>
+        </a>
+        <section>
+          <table>
+            <% userList.forEach((user)=>{ %>
+              <tr key=<%=user.key %>>
+                <td><%=user.name %></td>
+                <td><%=user.age %></td>
+                <td><a href='/add?<%=user.key %>'><button class='btn btn-success'>Edit</button></a></td>
+                <td><a href='/delete/<%=user.key %>'><button class='btn btn-danger'>Delete</button></a></td>
+              </tr>
+            <% }) %>
+          </table>
+        </section>
+    </div>
+  </body>
+</html>

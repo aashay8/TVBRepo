@@ -1,0 +1,16 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: darkgray;
+}
+
+
+body > div{
+  background-color: white;
+}
+
+.head{
+  height: 4rem;
+  background: brown;
+  margin: 0;
+  padding: 0.2rem;
+}
