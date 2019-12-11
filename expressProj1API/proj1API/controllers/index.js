@@ -11,13 +11,13 @@ module.exports = {
 
     //Register Functionality
     register: function(req, res, next){
-        let { newUserName, newEmail, newPassword } = req.body;
+        let { userName, email, password } = req.body;
         //check if user already exists
         let rawdata = fs.readFileSync(path.join(__dirname, '../Users.json'));
         let users = JSON.parse(rawdata);
 
         for(let i in users){
-            if(users[i].email == newEmail)
+            if(users[i].email == email)
                 return res.status(200).json({
                     message: "User already exists in database",
                     data: ""
@@ -25,7 +25,7 @@ module.exports = {
         }
 
         //Password being hashed
-        bcrypt.hash(newPassword,process.env.HASHKEY*1)
+        bcrypt.hash(password,process.env.HASHKEY*1)
 
             .then((hashedPassword)=>{
             
@@ -33,7 +33,7 @@ module.exports = {
                 //Send verification mail
                 sendMail({
                     from: process.env.SMTP_FROM_MAIL,
-                    to: newEmail,
+                    to: email,
                     subject: 'Account Verification Mail',
                     text: `Please click below link to verify your email: 
                     http://localhost:${process.env.PORT}/accVerification/${verificationCode}
@@ -46,8 +46,8 @@ module.exports = {
                         });
                     //Add user to DB if successfully sent mail
                     let newUser = {
-                        userName: newUserName,
-                        email: newEmail,
+                        userName: userName,
+                        email: email,
                         password: hashedPassword,
                         verificationCode: verificationCode,
                         isVerified: false
@@ -274,7 +274,7 @@ module.exports = {
             for(let i in users){
                 if(users[i].email == emailId){
                     return res.status(200).json({
-                        message: "",
+                        message: "Profile Data",
                         data: {
                             userName: users[i].userName,
                             userEmail: users[i].email

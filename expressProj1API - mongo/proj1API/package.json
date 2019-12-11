@@ -1,0 +1,36 @@
+{
+  "name": "proj1api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "docs": "apidoc -i routes/ -o docs/ && node docs-server.js"
+  },
+  "apidoc": {
+    "name": "express-api",
+    "version": "0.0.0",
+    "description": "apiDoc for express server",
+    "apidoc": {
+      "title": "Express-API Docs",
+      "url": ""
+    }
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "~1.4.4",
+    "crypto-random-string": "^3.0.1",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "helmet": "^3.21.2",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.0",
+    "morgan": "~1.9.1",
+    "nodemailer": "^6.4.0",
+    "nodemon": "^2.0.1",
+    "validatorjs": "^3.18.1"
+  }
+}
