@@ -1,0 +1,18 @@
+[
+  {
+    "userName": "Aashay",
+    "email": "test@test.com",
+    "password": "$2a$08$or344bPPkDKg3OmIUBeMY.iOXTgNGJN5EmCfX0vfiDQdwU1HcGLl2",
+    "verificationCode": "5nkQpdUJB.",
+    "isVerified": true
+  },
+  {
+    "userName": "Test Name",
+    "email": "test1@test.com",
+    "password": "$2a$08$G9FEBvdgCW2JdTl71ml.leBiV6W.KVyA3iyRGIZcSWWJ.3xtS0Kj2",
+    "verificationCode": "ifLthBG3Iv",
+    "isVerified": true,
+    "passwordResetCode": null,
+    "passwordExpiryDate": 1575987058249
+  }
+]
